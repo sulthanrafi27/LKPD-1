@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Opacity</title>
+    <style>
+        #image-display {
+            max-width: 100%;
+            max-height: 400px;
+            display: block;
+            margin: 20px auto;
+        }
+    </style>
+</head>
+<body>
+    <label for="image-select">Ubah :</label>
+    <select id="image-select">
+        <option value="deadpool.webp">Gambar 1</option>
+        <option value="spider.jpeg">Gambar 2</option>
+    </select>
+
+    <label for="opacity-select">Pilih Opacity:</label>
+    <select id="opacity-select">
+        <option value="1">1</option>
+        <option value="0.5">0.5</option>
+        <option value="0.2">0.2</option>
+    </select>
+    
+
+    <img id="image-display" src="img.webp" alt="Selected Image">
+
+    <script>
+        const imageSelect = document.getElementById('image-select');
+        const opacitySelect = document.getElementById('opacity-select');
+        const imageDisplay = document.getElementById('image-display');
+
+        imageSelect.addEventListener('change', function() {
+            imageDisplay.src = this.value;
+        });
+
+        opacitySelect.addEventListener('change', function() {
+            imageDisplay.style.opacity = this.value;
+        });
+    </script>
+
+</body>
+
+</html>

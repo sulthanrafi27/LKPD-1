@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Input dan Tampilkan Teks</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            background-color: #f0f0f0;
+            margin: 0;
+            padding: 20px;
+        }
+        input, button {
+            font-size: 18px; 
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: gray;
+            color: black;
+            cursor: pointer;
+            border: none;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: darkgray;
+        }
+        #display-text {
+            font-size: 24px;
+            margin: 20px;
+            color: #333;
+        }
+        .highlight {
+            color: rgb(0, 85, 255);
+        }
+    </style>
+</head>
+<body>
+    <input type="text" id="search-input" placeholder="Search..">
+    <button onclick="displayText()">Submit</button>
+    <div id="display-text">Tidak mencari data</div>
+
+    <script>
+        function displayText() {
+            const inputElement = document.getElementById('search-input');
+            const displayElement = document.getElementById('display-text');
+            const inputText = inputElement.value;
+
+            if (inputText.trim() === '') {
+                displayElement.innerHTML = 'Tidak mencari data';
+            } else {
+                displayElement.innerHTML = 'Mencari data <span class="highlight">' + inputText + '</span>';
+            }
+        }
+    </script>
+</body>
+</html>

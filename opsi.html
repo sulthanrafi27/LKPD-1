@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+
+        <div class="container">
+          <h3 class="title">Opsi Jawaban & Poin</h3>
+        
+          <div id="options-container">
+            opsi 1
+            <div class="option-row"> 
+              <input type="text" class="input-field" placeholder="poin" style="margin-top: 10px">
+              <input type="text" class="input-field" placeholder="deskripsi opsi">
+            </div>
+          </div>
+        
+          <button class="add-option" onclick="addOption()" style="margin-top: 10px">
+           tambah opsi
+          </button>
+        </div>
+        
+        <script>
+        let angka = 1;
+        function addOption() {
+          angka++
+          var optionsContainer = document.getElementById("options-container");
+          var newOptionRow = document.createElement("div");
+          newOptionRow.classList.add("option-row");
+          newOptionRow.innerHTML = `
+        opsi ${angka} <br>
+            <input type="text" class="input-field" placeholder="poin">
+            <input type="text" class="input-field" placeholder="deskripsi opsi">
+          `;
+          optionsContainer.appendChild(newOptionRow);
+        }
+        </script>
+                
+</body>
+</html>
